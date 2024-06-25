@@ -1,0 +1,81 @@
+{
+  "node_info": {
+    "nodes": ["hostname-23r66x3", "hostname-32ls6x3", "hostname-3lvy7y3", "hostname-f7n4wx3"],
+    "port": "22",
+    "user": "host"
+  },
+  "leaf_health_checks": [],
+  "ubuntu": {
+    "distributor id": "ubuntu",
+    "description": "ubuntu 22.04.3 lts",
+    "release":  "22.04",
+    "codename": "jammy"
+  },
+  "ib_hcas": {
+    "mlx5_0": "ibp26s0",
+    "mlx5_3": "ibp60s0",
+    "mlx5_4": "ibp77s0",
+    "mlx5_5": "ibp94s0",
+    "mlx5_6": "ibp156s0",
+    "mlx5_9": "ibp188s0",
+    "mlx5_10": "ibp204s0",
+    "mlx5_11": "ibp220s0"
+  },
+  "infiniband_error": {
+    "driver_versions": {
+      "Host Driver Version": "MLNX_OFED_LINUX-23.10-1.1.9.0 (OFED-23.10-1.1.9): 6.5.0-1007-nvidia",
+      "Firmware on CA": "v28.39.1002",
+      "total_passes": 9
+    },
+    "hcas": {
+      "Port State": "UP 4X NDR (InfiniBand)",
+      "Node GUID": "VALID_UUID",
+      "total_passes": 19
+    },
+    "error_counters": {
+      "total_passes": 8
+    }
+  },
+  "vbios": {
+    "CUDA Version": "12.2",
+    "Driver Version": "535.129.03",
+    "GSP Firmware Version": "535.129.03",
+    "Image Version": "G520.0200.00.05",
+    "Inforom Version": "",
+    "VBIOS Version": "96.00.99.00.01"
+  },
+  "docker": {
+    "expected_error_info": {
+      "Driver": "zfs"
+    },
+    "expected_warning_info" : {
+      "CgroupVersion": "2",
+      "KernelVersion": "6.5.0-1007-nvidia",
+      "OSVersion": "22.04",
+      "ServerVersion": "25.0.3",
+      "ClientInfo": {
+          "Version": "25.0.3",
+          "GoVersion": "go1.21.6"
+      }
+    }
+  },
+  "flint": {
+    "expected_fields": {
+      "Image type": ["FS4"],
+      "FW Version": ["28.39.1002"],
+      "Product Version": ["28.39.1002"],
+      "FW Factory Version": ["00.00.0000"],
+      "Rom Info": ["type=UEFI version=14.32.12 cpu=AMD64,AARCH64", "type=PXE version=3.7.201 cpu=AMD64"]
+    },
+    "expected_FW_possibilities": {
+        "Information block is": ["FW image A is present", "FW image B is present"],
+        "FW A Version": ["47.171.0001", "00.00.0000"],
+        "FW B Version": ["00.00.0000", "47.171.0001"]
+    }
+  },
+  "infiniband_status": {
+    "network_type": "NDR",
+    "active_devices": "8",
+    "device_names": ["mlx5_0","mlx5_3","mlx5_4","mlx5_5","mlx5_6","mlx5_9","mlx5_10","mlx5_11"]
+  }
+}
