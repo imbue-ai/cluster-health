@@ -1,3 +1,12 @@
+"""
+Usage:
+```
+python communication_validation_tests.py --test
+```
+
+where test is one of {group_ib, p2p_ib, nvlink, wait, all_single_node}
+"""
+
 import argparse
 import json
 import os

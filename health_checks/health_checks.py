@@ -1284,7 +1284,6 @@ class GdrEnabledHealthCheckWarning(HealthCheckWarning):
     Raised when GDR is not enabled for this machine.
     """
 
-    # TODO: find this somewhere in slack
     suggested_remediation: str = "\n".join(
         ("GDR is not enabled for this machine. Run `sudo modprobe nvidia-peermem`",
          "Refer here: https://download.nvidia.com/XFree86/Linux-x86_64/535.183.01/README/nvidia-peermem.html",)

@@ -1,3 +1,13 @@
+"""
+Usage: 
+```
+python gpu_stress_test.py max_runtime_in_seconds
+```
+
+`max_runtime_in_seconds` is optional and defaults to 300 seconds (5 minutes)
+"""
+
+
 import math
 import socket
 import sys
