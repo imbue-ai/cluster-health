@@ -7,3 +7,4 @@ The code is organized as follows:
 - `health_checks` contains various checks we use to determine which hosts are healthy, as well as automated solutions to common issues.
 - `host_validation` contains tests to check that the GPUs on a given machine are able to communicate with each other (via NVLink) and with GPUs on other machines (via InfiniBand).
 - `ufm_events` contains a script which parses the UFM event log and other logs, checks for relevant events, and determines which network ports should be disabled.
+- `ib_burn` contains a script for generating a comprehensive burn-in workload for IB fabrics, aiming to exercise every available link.

@@ -1,0 +1,29 @@
+{
+    "node_info": {
+        "nodes": {
+            "hostname-23r66x3": "10.1.2.3",
+            "hostname-32ls6x3": "10.1.2.4",
+            "hostname-3lvy7y3": "10.1.2.5"
+        },
+        "user": "root",
+        "port": 22
+    },
+    "ib_hcas": {
+        "mlx5_0": "ibp26s0",
+        "mlx5_3": "ibp60s0",
+        "mlx5_4": "ibp77s0",
+        "mlx5_5": "ibp94s0",
+        "mlx5_6": "ibp156s0",
+        "mlx5_9": "ibp188s0",
+        "mlx5_10": "ibp204s0",
+        "mlx5_11": "ibp220s0"
+    },
+    "ib_burn": {
+        "min_link_throughput": 0.50,
+        "max_link_throughput": 1.00,
+        "parallel_stage_size": 1024,
+        "parallel_stage_time": 1800,
+        "server_startup_time": 15,
+        "writer_startup_time": 1
+    }
+}
