@@ -1421,15 +1421,15 @@ class _VBiosVersionHealthCheck(LeafHealthCheck):
         expected_output = [
             ["1 CUDA Version", EXPECTED_CONFIG["vbios"]["CUDA Version"]],
             ["1 Driver Version", EXPECTED_CONFIG["vbios"]["Driver Version"]],
-            ["8         Image Version", EXPECTED_CONFIG["vbios"]["Image Version"]],
-            ["8     GSP Firmware Version", EXPECTED_CONFIG["vbios"]["GSP Firmware Version"]],
-            ["8     Inforom Version"],
-            ["8     VBIOS Version", EXPECTED_CONFIG["vbios"]["VBIOS Version"]],
+            ["8 Image Version", EXPECTED_CONFIG["vbios"]["Image Version"]],
+            ["8 GSP Firmware Version", EXPECTED_CONFIG["vbios"]["GSP Firmware Version"]],
+            ["8 Inforom Version"],
+            ["8 VBIOS Version", EXPECTED_CONFIG["vbios"]["VBIOS Version"]],
         ]
-        output_parsed = [[field.strip() for field in line.split(":")] for line in output.splitlines()]
+        output_parsed = [[re.sub('\s{2,}', ' ', field.strip()) for field in line.split(":")] for line in output.splitlines()]
         silenced_items = []
-        expected_output = [item for item in expected_output if item[0] not in silenced_items]
-        output_parsed = [item for item in output_parsed if item[0] not in silenced_items]
+        expected_output = sorted([item for item in expected_output if item[0] not in silenced_items])
+        output_parsed = sorted([item for item in output_parsed if item[0] not in silenced_items])
         if output_parsed != expected_output:
             for i in range(len(output_parsed)):
                 if output_parsed[i] != expected_output[i]:
