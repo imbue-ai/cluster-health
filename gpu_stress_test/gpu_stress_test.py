@@ -15,14 +15,27 @@ import time
 
 import torch
 
-GPU_MEMORY_IN_GB = 40
+# GPU_MEMORY_IN_GB = 40
 MAX_RUNTIME = 5 * 60  # Run for 5 minutes
 
+def get_gpu_memory_in_gb() -> float:
+    """
+    Retrieves the total GPU memory using Pytorch and returns it in gigabytes.
+    
+    Returns:
+        float: Total GPU memory in gigabytes, rounded up to the nearest whole number.
+    """
+    free_mem, total_mem = torch.cuda.mem_get_info()
+    
+    gpu_memory_in_gb = total_mem / 1_000_000_000  # 1 GB = 10^9 bytes
+
+    return math.ceil(gpu_memory_in_gb)
 
 def run_load() -> str:
     if not torch.cuda.is_available():
         return "CUDA is not available"
     # Get the array size for a square array that fills 1/4 of memory with 2 byte values
+    GPU_MEMORY_IN_GB = get_gpu_memory_in_gb()
     arr_size = (((GPU_MEMORY_IN_GB / 4) * 10**9) / 2) ** (1 / 2)
     arr_size = int(math.ceil(arr_size))
     num_gpus = torch.cuda.device_count()
