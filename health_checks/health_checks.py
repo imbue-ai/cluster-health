@@ -174,7 +174,7 @@ class CompoundHealthCheckWarning(HealthCheckWarning):
         Builds a compound warning from a list of sub-warnings in a human-readable way,
         or just returns the singleton warning passed in.
         """
-        seq: Tuple[HealthCheckOutcome] = (
+        seq: Tuple[HealthCheckOutcome, ...] = (
             *warnings,
             *silenced_warnings,
         )  # type: ignore
